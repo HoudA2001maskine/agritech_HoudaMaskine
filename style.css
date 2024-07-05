@@ -1,0 +1,413 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+    /* Ajout du fond d'image */
+    background-image: url('Images visite 1/image 2.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Pour que l'image reste fixe lors du défilement */
+    padding-top: 80px; /* Ajuster selon la hauteur de votre header */
+    overflow-x: hidden; 
+    scrollbar-width: auto;/* Empêcher le défilement horizontal */
+    /* Gardez cela si vous ne voulez pas de défilement horizontal */
+    
+   
+    
+}
+
+/* Header Styles */
+header {
+    position: fixed; /* Fixer le header */
+    top: 0; /* Le positionner en haut de la fenêtre */
+    width: 100%; /* Prendre la largeur complète */
+    background-color: rgba(255, 255, 255, 0.9); /* Fond légèrement transparent */
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s; /* Transition pour le mode sombre */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+nav {
+    display: flex;
+}
+
+nav button {
+    background-color: transparent;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s;
+    color: #000; /* Couleur par défaut */
+}
+
+nav button::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(0, 0, 0, 0.1);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+}
+
+nav button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+nav button:hover {
+    color: #4CAF50; /* Couleur verte pour le hover */
+}
+
+.menu {
+    position: relative;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu:hover .dropdown {
+    display: block;
+}
+
+.dropdown button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dropdown button:hover {
+    background-color: #f0f0f0;
+}
+
+.auth-buttons button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.auth-buttons button:hover {
+    background-color: #4CAF50; /* Couleur verte pour le hover */
+    transform: scale(1.05);
+    color: #fff; /* Couleur du texte en blanc pour contraste */
+}
+
+.mode-toggle button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 20px;
+    transition: transform 0.3s;
+}
+
+.mode-toggle button:hover {
+    transform: rotate(20deg);
+}
+
+.mode-toggle button:hover {
+    background-color: #4CAF50; /* Couleur verte pour le fond */
+    color: #fff; /* Couleur du texte en blanc pour contraste */
+}
+
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode header {
+    background-color: rgba(0, 0, 0, 0.9); /* Fond légèrement transparent */
+    color: #4CAF50; /* Couleur verte pour le texte */
+}
+
+.dark-mode nav button,
+.dark-mode .auth-buttons button {
+    color: #fff; /* Couleur du texte en blanc pour contraste */
+}
+
+.dark-mode .dropdown button {
+    color: #4CAF50; /* Couleur verte pour les choix de menu */
+}
+.content-section {
+    padding-top: 80px; /* Ajuster selon la hauteur de votre header */
+    padding-bottom: 60px; /* Espace pour le footer */
+    overflow: hidden; /* Vous pouvez retirer cela pour permettre le défilement */
+}
+.container {
+    position: absolute;
+   
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1300px;
+    height: 600px;
+    background: transparent;
+    box-shadow: 0 30px 50px #dbdbdb;
+    border-radius: 20px;
+    overflow: hidden; /* Empêcher le défilement à l'intérieur du container */
+}
+
+.slide {
+    position: relative;
+    height: 100%;
+}
+
+.item {
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    border-radius: 20px;
+    box-shadow: 0 30px 50px #505050;
+    background-position: 50% 50%;
+    background-size: cover;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+/* Styles pour chaque image spécifique */
+.img1 {
+    background-image: url('Images visite 1/image 2.jpeg');
+}
+
+.img2 {
+    background-image: url('Images visite 1/image8.jpeg');
+    filter: blur(8px);
+}
+
+.img3 {
+    background-image: url('Images visite 1/image 4.jpeg');
+}
+
+.img4 {
+    background-image: url('Images visite 1/image 12.jpg');
+}
+
+.img5 {
+    background-image: url('Images visite 1/image 6.jpeg');
+}
+
+.img6 {
+    background-image: url('Images visite 1/image 10.jpeg');
+}
+
+/* Réorganiser les items pour les différentes images */
+.slide .item:nth-child(1),
+.slide .item:nth-child(2) {
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slide .item:nth-child(3) {
+    left: 50%;
+}
+
+.slide .item:nth-child(4) {
+    left: calc(50% + 220px);
+}
+
+.slide .item:nth-child(5) {
+    left: calc(50% + 440px);
+}
+
+.slide .item:nth-child(n + 6) {
+    left: calc(50% + 660px);
+    opacity: 0;
+}
+
+.item .content {
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    width: 300px;
+    text-align: left;
+    color: #000;  /* Changer la couleur du texte en noir */
+    transform: translate(0, -50%);
+    font-family: system-ui;
+    display: none;
+}
+
+.slide .item:nth-child(2) .content {
+    display: block;
+}
+
+.content .name {
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0;
+    animation: animate 1s ease-in-out 1 forwards;
+    color: #000;  /* Changer la couleur du texte en noir */
+}
+
+.content .des {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
+    color: #000;  /* Changer la couleur du texte en noir */
+}
+
+.content button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.6s 1 forwards;
+    color: #000;  /* Changer la couleur du texte en noir */
+}
+
+@keyframes animate {
+    from {
+        opacity: 0;
+        transform: translate(0, 100px);
+        filter: blur(33px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0);
+        filter: blur(0);
+    }
+}
+
+.button {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+}
+
+.button button {
+    width: 40px;
+    height: 35px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+    border: 1px solid #000;
+    transition: 0.3s;
+}
+
+.button button:hover {
+    background: #ababab;
+    color: #fff;
+}
+
+/* Styles pour le footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.footer-links ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.footer-links ul li {
+    margin-right: 20px;
+}
+
+.footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #4CAF50;
+}
+
+.footer-social ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.footer-social ul li {
+    margin-right: 10px;
+}
+
+.footer-social ul li a img {
+    width: 30px; /* Ajustez la taille des icônes selon vos besoins */
+    height: auto;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.footer-bottom p {
+    color: #ccc;
+    font-size: 14px;
+}
