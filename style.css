@@ -1,27 +1,18 @@
-/* Reset CSS */
-* {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
+*{
     margin: 0;
     padding: 0;
+    font-family: "Poppins" , sans-serif;
     box-sizing: border-box;
+    transition: all.2s linear;
+    text-decoration: none;
+    border: none;
 }
-
 /* Body Styles */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f0f0f0;
-    /* Ajout du fond d'image */
-    background-image: url('Images visite 1/image 2.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Pour que l'image reste fixe lors du défilement */
-    padding-top: 80px; /* Ajuster selon la hauteur de votre header */
-    overflow-x: hidden; 
-    scrollbar-width: auto;/* Empêcher le défilement horizontal */
-    /* Gardez cela si vous ne voulez pas de défilement horizontal */
-    
    
-    
+  
+   
 }
 
 /* Header Styles */
@@ -168,24 +159,25 @@ nav button:hover {
 .dark-mode .dropdown button {
     color: #4CAF50; /* Couleur verte pour les choix de menu */
 }
+
 .content-section {
     padding-top: 80px; /* Ajuster selon la hauteur de votre header */
     padding-bottom: 60px; /* Espace pour le footer */
     overflow: hidden; /* Vous pouvez retirer cela pour permettre le défilement */
 }
-.container {
-    position: absolute;
-   
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 1300px;
-    height: 600px;
-    background: transparent;
-    box-shadow: 0 30px 50px #dbdbdb;
-    border-radius: 20px;
-    overflow: hidden; /* Empêcher le défilement à l'intérieur du container */
-}
+
+.container { 
+position: absolute;
+top: 60%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 1300px;
+height: 600px;
+margin-bottom: 20px;
+
+box-shadow: 0 30px 50px #dbdbdb;
+border-radius: 20px;
+overflow: hidden; /* Empêcher le défilement à l'intérieur du container */}
 
 .slide {
     position: relative;
@@ -206,14 +198,24 @@ nav button:hover {
     transition: 0.5s;
 }
 
+.item:hover {
+    transform: scale(1.1); /* Agrandir l'image lors du hover */
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3); /* Changer la boîte d'ombre lors du hover */
+}
+
+.item:active {
+    transform: scale(1.05); /* Réduire légèrement l'agrandissement lors du clic */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); /* Changer la boîte d'ombre lors du clic */
+}
+
 /* Styles pour chaque image spécifique */
 .img1 {
-    background-image: url('Images visite 1/image 2.jpeg');
+    background-image: url('Images visite 1/herbe 1.jpg');
 }
 
 .img2 {
     background-image: url('Images visite 1/image8.jpeg');
-    filter: blur(8px);
+   /* filter: blur(2px);*/
 }
 
 .img3 {
@@ -302,6 +304,7 @@ nav button:hover {
     color: #000;  /* Changer la couleur du texte en noir */
 }
 
+
 @keyframes animate {
     from {
         opacity: 0;
@@ -312,8 +315,7 @@ nav button:hover {
         opacity: 1;
         transform: translate(0);
         filter: blur(0);
-    }
-}
+    }}
 
 .button {
     width: 100%;
@@ -338,7 +340,402 @@ nav button:hover {
     color: #fff;
 }
 
+
+
+/* Styles pour la section "herbes" */
+#Herbes {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px; /* Ajoutez une marge supérieure pour espacer du conteneur */
+    margin-bottom: 20px; /* Marge inférieure pour espacer du bas de la page */
+    margin-bottom: 0;
+    padding: 800Px 20PX; /* Ajoutez un espace intérieur */
+    background-color: #f0f0f0; /* Couleur de fond pour mieux distinguer la section */
+    text-align: center; /* Centrer le contenu */
+    height: auto; /* Ajuste automatiquement la hauteur en fonction du contenu */
+align-items: center;
+padding:700px 15%; /* Ajuste le padding pour réduire l'espace autour du contenu */
+background-color: #f9f9f9; /* Ajoute une couleur de fond pour différencier la section */
+margin: 40px 0; /* Ajoute une marge pour séparer la section des autres sections */
+    
+}
+
+.section_title {
+    text-transform: uppercase;
+    position: relative;
+    font-size: 25px;
+margin: 100PX;
+    margin-bottom: 30px;
+}
+
+.section_title:before,
+.section_title:after {
+    position: absolute;
+    content: "";
+    background-color: #1ad358;
+    width: 100%;
+    height: 5px;
+    border-radius: 6px;
+}
+
+.section_title:before {
+    left: 10px;
+    bottom: 0;
+}
+
+.section_title:after {
+    top: 0;
+    left: -10px;
+}
+
+.images {
+    margin: 20px auto; /* Espacement autour de la liste d'images */
+    padding: 0 8%; /* Padding à gauche et à droite pour contenir les images */
+}
+
+.images ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centrer les images horizontalement */
+    list-style-type: none; /* Supprimer les puces de la liste */
+    padding: 0;
+}
+
+.images li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    transition: 0.5s;
+    height: 300px;
+    width: 30%; /* Ajuster la largeur des images */
+    max-width: 300px; /* Limiter la largeur maximale des images */
+    border: 1px solid #ccc; /* Ajouter une bordure pour délimiter les images */
+    border-radius: 8px; /* Arrondir les coins */
+    overflow: hidden; /* Cacher tout contenu débordant */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre douce */
+}
+
+.images li div {
+    width: 100%;
+    height: 100%; /* Hauteur de la partie image */
+    overflow: hidden; /* Cacher tout contenu débordant */
+}
+
+.images li div img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* Remplir l'espace de manière proportionnée */
+}
+
+.images li:hover {
+    transform: scale(1.05); /* Effet de zoom au survol */
+}
+
+
+
+#services {
+    height: auto; /* Ajuste automatiquement la hauteur en fonction du contenu */
+    min-height: 50vh; /* Définit une hauteur minimale pour garder une certaine taille */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 15%; /* Ajuste le padding pour réduire l'espace autour du contenu */
+    background-color: #f9f9f9; /* Ajoute une couleur de fond pour différencier la section */
+    margin: 20px 0; /* Ajoute une marge pour séparer la section des autres sections */
+}
+.list_services {
+    margin: 100px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.service {
+    width: 25%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    padding: 20px;
+    margin: 20px;
+}
+.service i {
+    font-size: 25px;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #52d20d;
+    color: #fff;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.service h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.service p {
+    font-size: 12px;
+}
+.service a {
+    margin-top: 10px;
+    color: #61cb10;
+    padding: 5px 20px;
+    border: solid #0ab535;
+    font-size: 12px;
+}
+/*s */ 
+
+#popular-destination {
+    padding: 0 10%;
+    margin-bottom: 50px;
+}
+
+#popular-destination .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: space-between;
+}
+
+#popular-destination .box {
+    overflow: hidden;
+    position: relative;
+    height: 500px; /* Hauteur des boîtes */
+    width: calc(50% - 16px); /* Ajustement de la largeur pour deux boîtes par ligne */
+    transition: 0.5s;
+}
+
+#popular-destination .box img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.box .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: 0.5s;
+    opacity: 0; /* Initialment invisible */
+}
+
+.box:hover .content {
+    transform: translateX(0);
+    opacity: 1; /* Rendre visible au survol */
+}
+
+.box .content h4 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.box .content p {
+    padding: 2px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.box .content p:nth-child(3) {
+    margin-bottom: 25px;
+}
+
+.box .content a {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 2px solid #03980f;
+    color: #148607;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.box .content a:hover {
+    background-color: #67df87;
+    color: #fff;
+}
+
+.box:hover {
+    box-shadow: 0 0 20px #0de226;
+}
+
+
+
+/* Style de la section "Les Adventices" */
+#adventices {
+    height: auto; /* Ajuste automatiquement la hauteur en fonction du contenu */
+    min-height: 50vh; /* Définit une hauteur minimale pour garder une certaine taille */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 15%; /* Ajuste le padding pour réduire l'espace autour du contenu */
+    background-color: #f9f9f9; /* Ajoute une couleur de fond pour différencier la section */
+    margin: 40px 0; /* Ajoute une marge pour séparer la section des autres sections */
+}
+
+
+.section_title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+#adventices {
+    height: auto; /* Ajuste automatiquement la hauteur en fonction du contenu */
+    min-height: 50vh; /* Définit une hauteur minimale pour garder une certaine taille */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 15%; /* Ajuste le padding pour réduire l'espace autour du contenu */
+    background-color: #f9f9f9; /* Ajoute une couleur de fond pour différencier la section */
+    margin: 40px 0; /* Ajoute une marge pour séparer la section des autres sections */
+}
+
+.section_title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 120px;
+    padding: 20px 5%;
+}
+.about .image {
+    width: 55%;
+    height: 400px;
+  
+}
+.about .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+}
+.about .content {
+    width: 40%;
+}
+.about .content h1 {
+    margin: 16px 0;
+}
+.about .content h2 {
+    margin: 15px 0;
+    color: #333;
+}
+.about .content p {
+    color: #999;
+    text-align: justify;
+    letter-spacing: 0.5px;
+    line-height: 25px;
+}
+.about button {
+    background-color: transparent;
+    border: 2px solid #4CAF50;
+    color: #4CAF50;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.about button:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+
 /* Styles pour le footer */
+#contact {
+    height: auto; /* Ajuste automatiquement la hauteur en fonction du contenu */
+    min-height: 50vh; /* Définit une hauteur minimale pour garder une certaine taille */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 15%; /* Ajuste le padding pour réduire l'espace autour du contenu */
+    background-color: #f9f9f9; /* Ajoute une couleur de fond pour différencier la section */
+    margin: 40px 0; /* Ajoute une marge pour séparer la section des autres sections */
+}
+.localisation_contact_div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 100px 0;
+    height: 80vh;
+}
+.localisation {
+    width: 49%;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.localisation iframe {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.localisation_contact_div .form_contact {
+    width: 49%;
+    height: 100%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    padding: 15px;
+    border-radius: 6px;
+}
+.localisation_contact_div h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+.localisation_contact_div .form_contact form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+.form_contact form input , textarea {
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 5px;
+    outline: 0;
+    border-radius: 6px;
+    font-size: 15px;
+    resize: none;
+}
+.form_contact form input[type="submit"]{
+    margin-bottom: 0;
+    background-color: #0fdc1d;
+    color: #fff;
+    border: 0;
+}
 footer {
     position: fixed;
     bottom: 0;
@@ -347,6 +744,7 @@ footer {
     background-color: #333;
     color: #fff;
     padding: 20px 0;
+    z-index: 2;
 }
 
 .footer-content {
@@ -404,7 +802,7 @@ footer {
 
 .footer-bottom {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 10px
 }
 
 .footer-bottom p {
