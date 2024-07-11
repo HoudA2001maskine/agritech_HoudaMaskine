@@ -11,6 +11,8 @@
 /* Body Styles */
 body {
    
+  margin: 0;
+  padding: 0;
   
    
 }
@@ -26,6 +28,7 @@ header {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
     transition: background-color 0.3s, color 0.3s; /* Transition pour le mode sombre */
 }
 
@@ -160,6 +163,9 @@ nav button:hover {
     color: #4CAF50; /* Couleur verte pour les choix de menu */
 }
 
+
+
+/* Box 1 Accueil */
 .content-section {
     padding-top: 80px; /* Ajuster selon la hauteur de votre header */
     padding-bottom: 60px; /* Espace pour le footer */
@@ -349,18 +355,19 @@ overflow: hidden; /* Empêcher le défilement à l'intérieur du container */}
     justify-content: center;
     flex-direction: column;
     margin-top: 20px; /* Ajoutez une marge supérieure pour espacer du conteneur */
-    margin-bottom: 20px; /* Marge inférieure pour espacer du bas de la page */
+   /* Marge inférieure pour espacer du bas de la page */
     margin-bottom: 0;
     padding: 800Px 20PX; /* Ajoutez un espace intérieur */
     background-color: #f0f0f0; /* Couleur de fond pour mieux distinguer la section */
     text-align: center; /* Centrer le contenu */
     height: auto; /* Ajuste automatiquement la hauteur en fonction du contenu */
 align-items: center;
-padding:700px 15%; /* Ajuste le padding pour réduire l'espace autour du contenu */
+ /* Ajuste le padding pour réduire l'espace autour du contenu */
 background-color: #f9f9f9; /* Ajoute une couleur de fond pour différencier la section */
 margin: 40px 0; /* Ajoute une marge pour séparer la section des autres sections */
-    
+ padding-bottom: 30px;
 }
+
 
 .section_title {
     text-transform: uppercase;
@@ -434,9 +441,9 @@ margin: 100PX;
     transform: scale(1.05); /* Effet de zoom au survol */
 }
 
+/* style pour section mauvaise herbes */
 
-
-#services {
+#mauvaises {
     height: auto; /* Ajuste automatiquement la hauteur en fonction du contenu */
     min-height: 50vh; /* Définit une hauteur minimale pour garder une certaine taille */
     display: flex;
@@ -446,17 +453,52 @@ margin: 100PX;
     text-align: center;
     padding: 20px 15%; /* Ajuste le padding pour réduire l'espace autour du contenu */
     background-color: #f9f9f9; /* Ajoute une couleur de fond pour différencier la section */
-    margin: 20px 0; /* Ajoute une marge pour séparer la section des autres sections */
+    margin-top: 0; /* Supprimez la marge supérieure */
+    margin-bottom: 0; /* Supprimez la marge inférieure */
+    margin-bottom: 20px; /* Ajoutez une nouvelle marge inférieure pour espacer du bas de la page */
 }
-.list_services {
+
+
+.section_title {
+    text-transform: uppercase;
+    position: relative;
+    font-size: 25px;
+    margin: 0 auto 30px;
+text-align: center;
+    margin-bottom: 30px;
+    width: fit-content;
+}
+
+.section_title:before,
+.section_title:after {
+    position: absolute;
+    content: "";
+    background-color: #1ad358;
+    width: 100%;
+    height: 5px;
+    border-radius: 6px;
+   
+}
+
+.section_title:before {
+    left: 10px;
+    bottom: 0;
+}
+
+.section_title:after {
+    top: 0;
+    left: -10px;
+}
+.list_mauvaise {
     margin: 100px 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     width: 100%;
+    z-index: 999;
 }
-.service {
+.mauvaise-herbe {
     width: 25%;
     text-align: center;
     display: flex;
@@ -467,7 +509,7 @@ margin: 100PX;
     padding: 20px;
     margin: 20px;
 }
-.service i {
+.mauvaise-herbe i {
     font-size: 25px;
     height: 50px;
     width: 50px;
@@ -479,46 +521,47 @@ margin: 100PX;
     border-radius: 50%;
     margin-bottom: 10px;
 }
-.service h3 {
+.mauvaise-herbe h3 {
     font-size: 18px;
     margin-bottom: 10px;
 }
-.service p {
+.mauvaise-herbe p {
     font-size: 12px;
 }
-.service a {
+.mauvaise-herbe a {
     margin-top: 10px;
     color: #61cb10;
     padding: 5px 20px;
     border: solid #0ab535;
     font-size: 12px;
 }
-/*s */ 
-
-#popular-destination {
+/*Apres Mauvaise herbes */ 
+#mauvaise-herbed {
     padding: 0 10%;
     margin-bottom: 50px;
+    position:relative;
 }
 
-#popular-destination .content {
+#mauvaise-herbed .content {
     display: flex;
     flex-wrap: wrap;
     gap: 32px;
     justify-content: space-between;
 }
 
-#popular-destination .box {
+#mauvaise-herbed .box {
     overflow: hidden;
     position: relative;
-    height: 500px; /* Hauteur des boîtes */
+    height: 450px; /* Hauteur des boîtes */
     width: calc(50% - 16px); /* Ajustement de la largeur pour deux boîtes par ligne */
     transition: 0.5s;
 }
 
-#popular-destination .box img {
+#mauvaise-herbed .box img {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    z-index: -1;
 }
 
 .box .content {
@@ -535,7 +578,7 @@ margin: 100PX;
     align-items: center;
     transform: translateX(100%);
     transition: 0.5s;
-    opacity: 0; /* Initialment invisible */
+    opacity: 0; /* Initialement invisible */
 }
 
 .box:hover .content {
@@ -544,13 +587,13 @@ margin: 100PX;
 }
 
 .box .content h4 {
-    font-size: 25px;
+    font-size: 20px; /* Taille de police réduite */
     margin-bottom: 10px;
 }
 
 .box .content p {
     padding: 2px;
-    font-size: 14px;
+    font-size: 12px; /* Taille de police réduite */
     margin-bottom: 10px;
 }
 
@@ -566,6 +609,7 @@ margin: 100PX;
     font-weight: bold;
     text-decoration: none;
     display: inline-block;
+    font-size: 14px; /* Taille de police réduite */
     transition: 0.3s;
 }
 
@@ -577,7 +621,6 @@ margin: 100PX;
 .box:hover {
     box-shadow: 0 0 20px #0de226;
 }
-
 
 
 /* Style de la section "Les Adventices" */
@@ -653,23 +696,6 @@ margin: 100PX;
     letter-spacing: 0.5px;
     line-height: 25px;
 }
-.about button {
-    background-color: transparent;
-    border: 2px solid #4CAF50;
-    color: #4CAF50;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.about button:hover {
-    background-color: #4CAF50;
-    color: white;
-}
-
-
-
 /* Styles pour le footer */
 #contact {
     height: auto; /* Ajuste automatiquement la hauteur en fonction du contenu */
@@ -737,7 +763,7 @@ margin: 100PX;
     border: 0;
 }
 footer {
-    position: fixed;
+   
     bottom: 0;
     left: 0;
     width: 100%;
@@ -809,3 +835,4 @@ footer {
     color: #ccc;
     font-size: 14px;
 }
+
